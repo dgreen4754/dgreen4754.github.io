@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu | Cafe Verde</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'verde-light': '#f6f9f5',
+            'verde-nav': '#e8f2ec',
+            'verde-dark': '#2e3b2c',
+            'verde-medium': '#374634',
+            'verde-text': '#5c6e59',
+            'verde-accent': '#4caf50',
+            'verde-accent-dark': '#388e3c'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-verde-light text-gray-900 font-sans">
+  <!-- Mobile-first responsive navigation -->
+  <nav class="bg-white shadow-sm border-b border-verde-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <img class="h-10 w-auto" src="images/cafeverde_logo1.png" alt="Cafe Verde">
+        </div>
+        
+        <!-- Desktop navigation -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="index.html" class="text-verde-medium hover:text-verde-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+            <a href="about.html" class="text-verde-medium hover:text-verde-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+            <a href="menu.html" class="text-verde-dark hover:text-verde-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Menu</a>
+            <a href="partners.html" class="text-verde-medium hover:text-verde-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Partners</a>
+            <a href="contact.html" class="text-verde-medium hover:text-verde-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+          </div>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button type="button" class="text-verde-medium hover:text-verde-accent focus:outline-none focus:text-verde-accent" onclick="toggleMobileMenu()">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-verde-nav">
+        <a href="index.html" class="text-verde-medium hover:text-verde-accent block px-3 py-2 text-base font-medium">Home</a>
+        <a href="about.html" class="text-verde-medium hover:text-verde-accent block px-3 py-2 text-base font-medium">About</a>
+        <a href="menu.html" class="text-verde-dark block px-3 py-2 text-base font-medium">Menu</a>
+        <a href="partners.html" class="text-verde-medium hover:text-verde-accent block px-3 py-2 text-base font-medium">Partners</a>
+        <a href="contact.html" class="text-verde-medium hover:text-verde-accent block px-3 py-2 text-base font-medium">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-verde-light to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+      <div class="text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-verde-dark mb-6">
+          Our Menu
+        </h1>
+        <p class="text-xl text-verde-medium max-w-3xl mx-auto">
+          Fresh, seasonal ingredients crafted into delicious, sustainable dishes
+        </p>
+        <p class="text-lg text-verde-text mt-4">
+          Ingredients may vary seasonally to ensure peak freshness and flavor
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Categories -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Featured Dishes -->
+      <div class="mb-16">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-4">Featured Dishes</h2>
+          <p class="text-lg text-verde-medium">Our most popular seasonal offerings</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Dish 1 -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-verde-nav">
+            <div class="aspect-w-16 aspect-h-12">
+              <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&h=300&fit=crop&crop=center" alt="Fresh Garden Salad" class="w-full h-48 object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-semibold text-verde-dark">Dish 1</h3>
+                <span class="text-2xl font-bold text-verde-accent">$12</span>
+              </div>
+              <p class="text-verde-text mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-verde-medium bg-verde-light px-2 py-1 rounded">Vegetarian</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dish 2 -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-verde-nav">
+            <div class="aspect-w-16 aspect-h-12">
+              <img src="https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=400&h=300&fit=crop&crop=center" alt="Gourmet Sandwich" class="w-full h-48 object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-semibold text-verde-dark">Dish 2</h3>
+                <span class="text-2xl font-bold text-verde-accent">$14</span>
+              </div>
+              <p class="text-verde-text mb-4">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-verde-medium bg-verde-light px-2 py-1 rounded">Local Sourced</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dish 3 -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-verde-nav">
+            <div class="aspect-w-16 aspect-h-12">
+              <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=300&fit=crop&crop=center" alt="Hearty Soup" class="w-full h-48 object-cover">
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-semibold text-verde-dark">Dish 3</h3>
+                <span class="text-2xl font-bold text-verde-accent">$11</span>
+              </div>
+              <p class="text-verde-text mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              <div class="flex justify-between items-center">
+                <span class="text-sm text-verde-medium bg-verde-light px-2 py-1 rounded">Vegan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Menu List -->
+      <div class="bg-verde-light rounded-2xl p-8 sm:p-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-4">Complete Menu</h2>
+          <p class="text-lg text-verde-medium">All of our current offerings, made with love and local ingredients</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- Soups -->
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <h3 class="text-2xl font-bold text-verde-dark mb-6">
+              Soups
+            </h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Soup Dish 1</h4>
+                  <p class="text-sm text-verde-text">Lorem ipsum dolor sit amet consectetur</p>
+                </div>
+                <span class="font-bold text-verde-accent">$12</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Soup Dish 2</h4>
+                  <p class="text-sm text-verde-text">Adipiscing elit sed do eiusmod tempor</p>
+                </div>
+                <span class="font-bold text-verde-accent">$10</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Soup Dish 3</h4>
+                  <p class="text-sm text-verde-text">Incididunt ut labore et dolore magna</p>
+                </div>
+                <span class="font-bold text-verde-accent">$11</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Salads -->
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <h3 class="text-2xl font-bold text-verde-dark mb-6">
+              Salads
+            </h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Salad Dish 1</h4>
+                  <p class="text-sm text-verde-text">Ut enim ad minim veniam quis nostrud</p>
+                </div>
+                <span class="font-bold text-verde-accent">$14</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Salad Dish 2</h4>
+                  <p class="text-sm text-verde-text">Exercitation ullamco laboris nisi ut</p>
+                </div>
+                <span class="font-bold text-verde-accent">$18</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Salad Dish 3</h4>
+                  <p class="text-sm text-verde-text">Aliquip ex ea commodo consequat duis</p>
+                </div>
+                <span class="font-bold text-verde-accent">$13</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sandwiches -->
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <h3 class="text-2xl font-bold text-verde-dark mb-6">
+              Sandwiches
+            </h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Sandwich Dish 1</h4>
+                  <p class="text-sm text-verde-text">Aute irure dolor in reprehenderit</p>
+                </div>
+                <span class="font-bold text-verde-accent">$3</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Sandwich Dish 2</h4>
+                  <p class="text-sm text-verde-text">Voluptate velit esse cillum dolore</p>
+                </div>
+                <span class="font-bold text-verde-accent">$3</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Sandwich Dish 3</h4>
+                  <p class="text-sm text-verde-text">Eu fugiat nulla pariatur excepteur</p>
+                </div>
+                <span class="font-bold text-verde-accent">$5</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drinks -->
+          <div class="bg-white rounded-xl p-6 shadow-md">
+            <h3 class="text-2xl font-bold text-verde-dark mb-6">
+              Drinks
+            </h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Drink 1</h4>
+                  <p class="text-sm text-verde-text">Sint occaecat cupidatat non proident</p>
+                </div>
+                <span class="font-bold text-verde-accent">$7</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Drink 2</h4>
+                  <p class="text-sm text-verde-text">Sunt in culpa qui officia deserunt</p>
+                </div>
+                <span class="font-bold text-verde-accent">$6</span>
+              </div>
+              <div class="flex justify-between items-center pb-2 border-b border-verde-nav">
+                <div>
+                  <h4 class="font-semibold text-verde-dark">Drink 3</h4>
+                  <p class="text-sm text-verde-text">Mollit anim id est laborum sed</p>
+                </div>
+                <span class="font-bold text-verde-accent">$5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Menu Note -->
+        <div class="mt-8 text-center">
+          <p class="text-verde-text italic">
+            Our menu changes seasonally to reflect the freshest local ingredients available. 
+            Please ask your server about today's specials and any dietary accommodations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Section -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-6">Ready to Order?</h2>
+      <p class="text-lg text-verde-medium mb-8 max-w-2xl mx-auto">
+        Experience our fresh, sustainable cuisine. Order online for pickup or delivery, or visit us in person.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#" class="w-full sm:w-auto bg-verde-accent hover:bg-verde-accent-dark text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-200 transform hover:scale-105">
+          Order on DoorDash
+        </a>
+        <a href="#" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-200 transform hover:scale-105">
+          Order on Uber Eats
+        </a>
+        <a href="contact.html" class="w-full sm:w-auto bg-white hover:bg-gray-50 text-verde-accent border-2 border-verde-accent font-semibold py-3 px-8 rounded-lg transition-colors">
+          Visit Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-verde-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Logo and Description -->
+        <div class="md:col-span-2">
+          <img src="images/cafeverde_logo1.png" alt="Cafe Verde" class="h-12 mb-4 filter brightness-0 invert">
+          <p class="text-gray-300 mb-4 max-w-md">
+            Sustainable dining with fresh, locally-sourced ingredients. Experience the perfect blend of flavor and environmental consciousness.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-300 hover:text-verde-accent transition-colors">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-verde-accent transition-colors">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-verde-accent transition-colors">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.758-1.378l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.624 0 11.99-5.367 11.99-11.99C24.007 5.367 18.641.001 12.017.001z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-300 hover:text-verde-accent transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-verde-accent transition-colors">About Us</a></li>
+            <li><a href="menu.html" class="text-gray-300 hover:text-verde-accent transition-colors">Menu</a></li>
+            <li><a href="partners.html" class="text-gray-300 hover:text-verde-accent transition-colors">Partners</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>1111 E Spring St. Suite B</li>
+            <li>Zelienople, PA 16037</li>
+            <li>(123) 456-7890</li>
+            <li>hello@cafeverde.com</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p class="text-gray-300">&copy; 2025 Cafe Verde. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
