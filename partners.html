@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Partners | Cafe Verde</title>
+  <title>Partners | Cafe Verde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -17,15 +26,19 @@
             'verde-text': '#5c6e59',
             'verde-accent': '#4caf50',
             'verde-accent-dark': '#388e3c'
+          },
+          fontFamily: {
+            'heading': ['League Spartan', 'sans-serif'],
+            'body': ['Lato', 'sans-serif']
           }
         }
       }
     }
   </script>
 </head>
-<body class="bg-verde-light text-gray-900 font-sans">
+<body class="bg-verde-light text-gray-900 font-body">
   <!-- Mobile-first responsive navigation -->
-  <nav class="bg-white shadow-sm border-b border-verde-nav">
+  <nav class="bg-white shadow-sm border-b border-verde-nav fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
@@ -68,10 +81,10 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-b from-verde-light to-white">
+  <section class="relative bg-gradient-to-b from-verde-light to-white pt-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16">
       <div class="text-center">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-verde-dark mb-4">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-verde-dark mb-4 font-heading">
           Our Partners
         </h1>
         <p class="text-xl text-verde-medium max-w-3xl mx-auto">
@@ -85,7 +98,7 @@
   <section class="py-16 sm:py-20 lg:py-24 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-6">Why We Partner Locally</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-6 font-heading">Why We Partner Locally</h2>
         <p class="text-lg text-verde-medium leading-relaxed">
           At Cafe Verde, we believe that great food starts with great relationships. By partnering with local farms 
           and sustainable producers, we're not just serving fresh ingredients – we're supporting our community, 
@@ -100,7 +113,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-verde-dark mb-2">Community Support</h3>
+          <h3 class="text-xl font-semibold text-verde-dark mb-2 font-heading">Community Support</h3>
           <p class="text-verde-text">Keeping dollars local and supporting family farms</p>
         </div>
         

@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Cafe Verde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -17,15 +26,19 @@
             'verde-text': '#5c6e59',
             'verde-accent': '#4caf50',
             'verde-accent-dark': '#388e3c'
+          },
+          fontFamily: {
+            'heading': ['League Spartan', 'sans-serif'],
+            'body': ['Lato', 'sans-serif']
           }
         }
       }
     }
   </script>
 </head>
-<body class="bg-verde-light text-gray-900 font-sans">
+<body class="bg-verde-light text-gray-900 font-body">
   <!-- Mobile-first responsive navigation -->
-  <nav class="bg-white shadow-sm border-b border-verde-nav">
+  <nav class="bg-white shadow-sm border-b border-verde-nav fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
@@ -68,10 +81,10 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="relative bg-gradient-to-b from-verde-light to-white">
+  <section class="relative bg-gradient-to-b from-verde-light to-white pt-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16">
       <div class="text-center">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-verde-dark mb-4">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-verde-dark mb-4 font-heading">
           About Cafe Verde
         </h1>
         <p class="text-xl text-verde-medium max-w-3xl mx-auto">
@@ -81,32 +94,31 @@
     </div>
   </section>
 
+  <!-- Logo Section -->
+  <section class="py-12 bg-verde-light">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <img src="images/LOGO/CV_ROUND LOGO_COLOR.png" alt="Cafe Verde" class="w-full max-w-sm mx-auto mb-6">
+        <p class="text-verde-medium">This isn't just our motto – it's our promise to you and our community.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Our Story Section -->
   <section class="py-16 sm:py-20 lg:py-24 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-6">Our Story</h2>
-          <div class="space-y-4 text-lg text-verde-medium leading-relaxed">
-            <p>
-              Cafe Verde was born from a simple belief: that great food and environmental responsibility should go hand in hand. Founded in the heart of Zelienople, Pennsylvania, we've made it our mission to serve fresh, locally-sourced meals that nourish both our community and our planet.
-            </p>
-            <p>
-              Every dish we create tells a story of passion, flavor and sustainability, from the farms where our ingredients are grown to the plates they're served on. We believe that when you choose fresh, local, and sustainable, you're not just making a meal choice – you're making a choice for the future.
-            </p>
-            <p>
-              Our commitment extends beyond our kitchen. We work closely with local farmers, support sustainable agriculture practices, and strive to minimize our own environmental impact, as well as educate others. 
-            </p>
-          </div>
-        </div>
-        <div class="lg:order-first">
-          <div class="bg-verde-light rounded-2xl p-8">
-            <img src="images/LOGO/CV_ROUND LOGO_COLOR.png" alt="Cafe Verde" class="w-full max-w-sm mx-auto mb-6">
-            <div class="text-center">
-              <h3 class="text-xl font-semibold text-verde-dark mb-4">Good food. Grown right. Served fresh.</h3>
-              <p class="text-verde-medium">This isn't just our motto – it's our promise to you and our community.</p>
-            </div>
-          </div>
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-6">Our Story</h2>
+        <div class="space-y-4 text-lg text-verde-medium leading-relaxed">
+          <p>
+            Cafe Verde was born from a simple belief: that great food and environmental responsibility should go hand in hand. Founded in the heart of Zelienople, Pennsylvania, we've made it our mission to serve fresh, locally-sourced meals that nourish both our community and our planet.
+          </p>
+          <p>
+            Every dish we create tells a story of passion, flavor and sustainability, from the farms where our ingredients are grown to the plates they're served on. We believe that when you choose fresh, local, and sustainable, you're not just making a meal choice – you're making a choice for the future.
+          </p>
+          <p>
+            Our commitment extends beyond our kitchen. We work closely with local farmers, support sustainable agriculture practices, and strive to minimize our own environmental impact, as well as educate others. 
+          </p>
         </div>
       </div>
     </div>
@@ -116,7 +128,7 @@
   <section class="py-16 sm:py-20 lg:py-24 bg-verde-light">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-6">Our Values</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-6 font-heading">Our Values</h2>
         <p class="text-lg text-verde-medium max-w-3xl mx-auto">
           These core principles guide everything we do, from ingredient sourcing to customer service
         </p>
@@ -130,7 +142,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9a9 9 0 01-9-9m9 9c0 5-4 9-9 9s-9-4-9-9m9 9c5 0 9-4 9-9s-4-9-9-9" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-verde-dark mb-4">Sustainability</h3>
+          <h3 class="text-xl font-semibold text-verde-dark mb-4 font-heading">Sustainability</h3>
           <p class="text-verde-text">We prioritize environmental responsibility in every decision, from sourcing to waste management.</p>
         </div>
 
@@ -142,7 +154,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-verde-dark mb-4">Local Sourcing</h3>
+          <h3 class="text-xl font-semibold text-verde-dark mb-4 font-heading">Local Sourcing</h3>
           <p class="text-verde-text">We partner with nearby farms and producers to bring you the freshest ingredients while supporting our local economy.</p>
         </div>
 
@@ -153,7 +165,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-verde-dark mb-4">Quality</h3>
+          <h3 class="text-xl font-semibold text-verde-dark mb-4 font-heading">Quality</h3>
           <p class="text-verde-text">Every dish is crafted with attention to detail and a commitment to excellence that you can taste.</p>
         </div>
 
@@ -164,7 +176,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-verde-dark mb-4">Community</h3>
+          <h3 class="text-xl font-semibold text-verde-dark mb-4 font-heading">Community</h3>
           <p class="text-verde-text">We're more than a restaurant – we're a gathering place that brings people together over great food.</p>
         </div>
 
@@ -196,7 +208,7 @@
   <!-- Call to Action -->
   <section class="py-16 sm:py-20 lg:py-24 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-6">Experience the Difference</h2>
+      <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-6 font-heading">Experience the Difference</h2>
       <p class="text-lg text-verde-medium mb-8 max-w-2xl mx-auto">
         Ready to taste what sustainable, local dining is all about? Join us for a meal that's good for you and good for the community.
       </p>
@@ -242,7 +254,7 @@
         
         <!-- Quick Links -->
         <div>
-          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <h3 class="text-lg font-semibold mb-4 font-heading">Quick Links</h3>
           <ul class="space-y-2">
             <li><a href="index.html" class="text-gray-300 hover:text-verde-accent transition-colors">Home</a></li>
             <li><a href="about.html" class="text-gray-300 hover:text-verde-accent transition-colors">About Us</a></li>
@@ -253,7 +265,7 @@
         
         <!-- Contact Info -->
         <div>
-          <h3 class="text-lg font-semibold mb-4">Contact</h3>
+          <h3 class="text-lg font-semibold mb-4 font-heading">Contact</h3>
           <ul class="space-y-2 text-gray-300">
             <li>111 E Spring St. Suite B</li>
             <li>Zelienople, PA 16037</li>
