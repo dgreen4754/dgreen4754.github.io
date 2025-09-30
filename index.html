@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cafe Verde - Coming Soon</title>
+  <meta name="description" content="Cafe Verde in Zelienople, PA serves chef-crafted salads, sandwiches, and soups made with fresh, locally sourced ingredients." />
+  <title>Cafe Verde | Fresh, Locally Sourced Cafe in Zelienople, PA</title>
+  <link rel="canonical" href="https://cafeverdezelie.com/" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J5FDYSYWFR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-J5FDYSYWFR');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -11,7 +22,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
   <link rel="shortcut icon" href="favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+  <meta name="apple-mobile-web-app-title" content="Cafe Verde" />
   <link rel="manifest" href="favicon/site.webmanifest" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -36,34 +47,255 @@
     }
   </script>
 </head>
-<body class="bg-verde-light text-gray-900 font-body min-h-screen flex items-center justify-center">
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="text-center">
-      <!-- Logo -->
-      <img src="images/LOGO/CV_STACKED LOGO_COLOR.png" alt="Cafe Verde Logo" class="h-32 sm:h-40 mx-auto mb-8">
-      
-      <!-- Address -->
-      <div class="mb-12">
-        <p class="text-xl sm:text-2xl text-verde-text mb-2">
-          111 E Spring St. Suite B<br>
-          Zelienople, PA 16037
-        </p>
+<body class="bg-verde-light text-gray-900 font-body">
+  <!-- Mobile-first responsive navigation -->
+  <nav class="bg-white shadow-sm border-b border-verde-nav fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <img class="h-10 w-auto" src="images/LOGO/CV_LINEAR LOGO_COLOR.png" alt="Cafe Verde">
+        </div>
+        
+        <!-- Desktop navigation -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="index.html" class="text-verde-dark hover:text-verde-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+            <a href="about.html" class="text-verde-medium hover:text-verde-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+            <a href="menu.html" class="text-verde-medium hover:text-verde-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Menu</a>
+            <a href="partners.html" class="text-verde-medium hover:text-verde-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Partners</a>
+            <a href="contact.html" class="text-verde-medium hover:text-verde-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+          </div>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button type="button" class="text-verde-medium hover:text-verde-accent focus:outline-none focus:text-verde-accent" onclick="toggleMobileMenu()">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
-      
-      <!-- Coming Soon Banner -->
-      <div class="bg-white rounded-xl shadow-lg p-8 sm:p-12">
-        <h2 class="text-4xl sm:text-5xl font-bold text-verde-dark mb-6">Coming Soon</h2>
-        <p class="text-xl text-verde-medium max-w-2xl mx-auto">
-          We're cooking up something special. Stay tuned for fresh, sustainable dining in Zelienople.
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-verde-nav">
+        <a href="index.html" class="text-verde-dark block px-3 py-2 text-base font-medium">Home</a>
+        <a href="about.html" class="text-verde-medium hover:text-verde-accent block px-3 py-2 text-base font-medium">About</a>
+        <a href="menu.html" class="text-verde-medium hover:text-verde-accent block px-3 py-2 text-base font-medium">Menu</a>
+        <a href="partners.html" class="text-verde-medium hover:text-verde-accent block px-3 py-2 text-base font-medium">Partners</a>
+        <a href="contact.html" class="text-verde-medium hover:text-verde-accent block px-3 py-2 text-base font-medium">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-verde-light to-white pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      <div class="text-center">
+        <img src="images/LOGO/CV_STACKED LOGO_COLOR.png" alt="Cafe Verde Logo" class="h-20 sm:h-24 lg:h-28 mx-auto mb-4">
+        <p class="text-lg sm:text-xl text-verde-medium mb-8 max-w-2xl mx-auto">
+          Good food. Grown right. Served fresh.
+        </p>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="#" data-order-provider="DoorDash" class="w-full sm:w-auto bg-verde-accent hover:bg-verde-accent-dark text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-200 transform hover:scale-105">
+            Order on DoorDash
+          </a>
+          <a href="#" data-order-provider="Uber Eats" class="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-200 transform hover:scale-105">
+            Order on Uber Eats
+          </a>
+          <a href="#" data-order-provider="Square" class="w-full sm:w-auto bg-verde-accent hover:bg-verde-accent-dark text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-200 transform hover:scale-105">
+            Order on Square
+          </a>
+        </div>
+        <p class="mt-4 text-sm text-verde-text">
+          Online ordering launches soon—pick your favorite partner so we know where to go live first.
         </p>
       </div>
     </div>
-  </main>
+  </section>
 
-  <footer class="absolute bottom-0 w-full bg-verde-light py-4">
-    <div class="text-center text-verde-text">
-      <p>&copy; 2025 Cafe Verde. All rights reserved.</p>
+  <!-- Philosophy Section -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-6">Our Philosophy</h2>
+        <p class="text-lg text-verde-medium leading-relaxed">
+          We believe fresh and flavor go hand in hand. Our ingredients are locally sourced first and our dishes are always crafted with care — for your health and for our planet. 
+          That's why we have partnered with local farms to bring you the freshest, most flavorful salads, soup and sandwiches around. 
+         <br>See our incredible partners <a href="partners.html" class="text-verde-accent hover:text-verde-accent-dark underline font-medium">here</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chef's Favorites Section -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-verde-light">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-4">Chef's Favorites</h2>
+        <p class="text-lg text-verde-medium">Handpicked dishes that showcase our commitment to fresh, local ingredients</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Dish 1 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="w-full" style="aspect-ratio: 16 / 9;">
+            <img src="images/MENU/mushroom_soup.png" alt="Bowl filled with creamy roasted mushroom soup garnished with fresh herbs" class="w-full h-full object-cover" style="object-position: 60% 50%;">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-verde-dark mb-2">Roasted Mushroom Soup</h3>
+            <p class="text-verde-text mb-4">A creamy blend of roasted mushrooms and herbs</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-verde-accent">$11</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dish 2 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="w-full" style="aspect-ratio: 16 / 9;">
+            <img src="images/MENU/olympian_bowl.png" alt="Olympian Bowl salad bowl filled with spinach, rice, diced chicken, chickpeas, cucumber, tomato, red onion, feta, and pita chips arranged in a colorful presentation. The bowl sits on a wooden table in a bright, casual dining setting. The atmosphere feels fresh and inviting. No visible text." class="w-full h-full object-cover object-center" style="object-position: 40% 40%;">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-verde-dark mb-2">Olympian Bowl</h3>
+            <p class="text-verde-text mb-4">Spinach, cafe rice, diced chicken, chickpeas, cucumber, tomato, red onion, feta, and pita chips, lemon za'atar dressing</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-verde-accent">$13</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dish 3 -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="w-full" style="aspect-ratio: 16 / 9;">
+            <img src="images/MENU/caprese_focccia_sandwhich.jpeg" alt="Hand holding a caprese focaccia sandwich filled with mozzarella, tomato slices, basil, and lettuce. The sandwich is presented over a gray outdoor table with blurred background showing people enjoying a relaxed meal. The scene feels casual and inviting." class="w-full h-full object-cover object-center" style="object-position: 0% 60%;">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-verde-dark mb-2">Caprese Focaccia Sandwich</h3>
+            <p class="text-verde-text mb-4">Fresh mozzarella, tomatoes, and basil on focaccia</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-verde-accent">$11</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="menu.html" class="inline-flex items-center bg-white hover:bg-gray-50 text-verde-accent border-2 border-verde-accent font-semibold py-3 px-8 rounded-lg transition-colors">
+          View Full Menu
+          <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit Us Section -->
+  <section class="py-12 sm:py-16 lg:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-verde-dark mb-6">Visit Us</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          <div class="bg-verde-light rounded-lg p-8">
+            <h3 class="text-xl font-semibold text-verde-dark mb-6 font-heading">Location & Hours</h3>
+            <div class="space-y-4 text-verde-medium">
+              <p class="flex items-start">
+                <svg class="h-5 w-5 text-verde-accent mt-0.5 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                111 E Spring St. Suite B<br>Zelienople, PA 16037
+              </p>
+              <p class="flex items-center">
+                <svg class="h-5 w-5 text-verde-accent mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Wed-Sun: 11:00 AM - 7:00 PM<br>
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-verde-light rounded-lg p-8 text-center flex flex-col justify-center items-center">
+            <svg class="h-16 w-16 text-verde-accent mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+            <h3 class="text-xl font-semibold text-verde-dark mb-4 font-heading">Interactive Map</h3>
+            <p class="text-verde-medium mb-6">Click to open in Google Maps</p>
+            <button onclick="openDirections()" class="bg-verde-accent hover:bg-verde-accent-dark text-white font-medium py-3 px-8 rounded-lg transition-colors">
+              Get Directions
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Footer -->
+  <footer class="bg-verde-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Logo and Description -->
+        <div class="md:col-span-2">
+          <img src="images/LOGO/CV_LINEAR LOGO_COLOR.png" alt="Cafe Verde" class="h-12 mb-4 filter brightness-0 invert">
+          <p class="text-gray-300 mb-4 max-w-md">
+            Sustainable dining with fresh, locally-sourced ingredients. Experience the perfect blend of flavor and environmental consciousness.
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/cafe.verde.2025/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-verde-accent transition-colors" aria-label="Cafe Verde on Facebook">
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H8.078v-2.89h2.36V9.797c0-2.332 1.393-3.619 3.523-3.619 1.021 0 2.09.182 2.09.182v2.296h-1.178c-1.162 0-1.525.722-1.525 1.461v1.754h2.593l-.414 2.89h-2.179v6.987C18.343 21.128 22 16.991 22 12z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-300 hover:text-verde-accent transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-verde-accent transition-colors">About Us</a></li>
+            <li><a href="menu.html" class="text-gray-300 hover:text-verde-accent transition-colors">Menu</a></li>
+            <li><a href="partners.html" class="text-gray-300 hover:text-verde-accent transition-colors">Partners</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>111 E Spring St. Suite B</li>
+            <li>Zelienople, PA 16037</li>
+            <li>cafeverdezelie@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p class="text-gray-300">&copy; 2025 Cafe Verde. All rights reserved.</p>
+      </div>
     </div>
   </footer>
+
+  <script src="js/site.js"></script>
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    function openDirections() {
+      const address = "111 E Spring St. Suite B, Zelienople, PA 16037";
+      const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
 </html>
