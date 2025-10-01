@@ -66,7 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof window.gtag === 'function') {
           window.gtag('event', 'order_online_click', {
             event_category: 'engagement',
-            event_label: providerName
+            event_label: providerName,
+            order_provider: providerName
           });
         }
 
