@@ -1,81 +1,78 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const orderButtons = document.querySelectorAll('[data-order-provider]');
-
-  if (!orderButtons.length) {
+  const orderGroups = document.querySelectorAll('[data-order-group]');
+  if (!orderGroups.length) {
     return;
   }
 
-  const clickedMessage = 'Coming soon -- stay tuned!';
-  const disabledSessionKey = 'orderButtonsDisabled';
+  const storageKey = 'orderPreference';
+  const comingSoonLabel = 'Online Ordering Coming Soon';
+  const messages = document.querySelectorAll('[data-order-message]');
 
-  const colorClassesToRemove = [
-    'bg-verde-accent',
-    'hover:bg-verde-accent-dark',
-    'bg-gray-900',
-    'hover:bg-gray-800',
-    'bg-white',
-    'hover:bg-gray-50',
-    'text-verde-accent',
-    'text-white',
-    'hover:text-white',
-    'border-2',
-    'border-verde-accent'
-  ];
+  messages.forEach((message) => {
+    if (!message.dataset.defaultMessage) {
+      message.dataset.defaultMessage = message.textContent.trim();
+    }
+  });
 
-  const disableButton = (button) => {
-    if (button.classList.contains('order-coming-soon')) {
+  const updateMessages = (provider) => {
+    if (provider) {
+      messages.forEach((message) => {
+        message.textContent = `Thanks for letting us know you prefer ${provider}. Online ordering is coming soon—stay tuned!`;
+      });
+    } else {
+      messages.forEach((message) => {
+        message.textContent = message.dataset.defaultMessage || message.textContent;
+      });
+    }
+  };
+
+  const renderComingSoon = (group) => {
+    if (group.dataset.orderState === 'coming-soon') {
       return;
     }
 
-    colorClassesToRemove.forEach((cls) => {
-      if (button.classList.contains(cls)) {
-        button.classList.remove(cls);
-      }
-    });
-
-    button.classList.add(
-      'order-coming-soon',
-      'bg-gray-200',
-      'text-gray-600',
-      'hover:bg-gray-200',
-      'hover:text-gray-600',
-      'cursor-not-allowed',
-      'pointer-events-none'
-    );
-
-    button.textContent = clickedMessage;
+    group.innerHTML = '';
+    const button = document.createElement('a');
+    button.href = '#';
+    button.className = 'flex items-center justify-center w-full sm:w-auto sm:min-w-[280px] bg-gray-200 text-gray-600 font-semibold py-4 px-10 rounded-lg shadow-md cursor-not-allowed pointer-events-none';
+    button.textContent = comingSoonLabel;
     button.setAttribute('aria-disabled', 'true');
-    button.setAttribute('title', clickedMessage);
     button.setAttribute('tabindex', '-1');
+    button.setAttribute('title', comingSoonLabel);
+    group.appendChild(button);
+    group.dataset.orderState = 'coming-soon';
   };
 
-  const disableAllButtons = () => {
-    orderButtons.forEach(disableButton);
+  const renderComingSoonEverywhere = (provider) => {
+    orderGroups.forEach(renderComingSoon);
+    updateMessages(provider);
   };
 
-  if (sessionStorage.getItem(disabledSessionKey) === 'true') {
-    disableAllButtons();
+  const storedPreference = sessionStorage.getItem(storageKey);
+  if (storedPreference) {
+    renderComingSoonEverywhere(storedPreference);
+    return;
   }
 
-  orderButtons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      event.preventDefault();
+  orderGroups.forEach((group) => {
+    const buttons = group.querySelectorAll('[data-order-provider]');
 
-      if (sessionStorage.getItem(disabledSessionKey) === 'true') {
-        return;
-      }
+    buttons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
 
-      const provider = button.dataset.orderProvider || '';
+        const providerName = button.dataset.orderLabel || button.textContent.trim();
 
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'order_online_click', {
-          event_category: 'engagement',
-          event_label: provider || 'unknown'
-        });
-      }
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'order_online_click', {
+            event_category: 'engagement',
+            event_label: providerName
+          });
+        }
 
-      disableAllButtons();
-      sessionStorage.setItem(disabledSessionKey, 'true');
+        sessionStorage.setItem(storageKey, providerName);
+        renderComingSoonEverywhere(providerName);
+      });
     });
   });
 });
